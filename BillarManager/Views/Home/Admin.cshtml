@@ -1,0 +1,28 @@
+﻿@{ 
+    @model List<BillarManager.Models.Mesa>
+}
+<div class="container container-fluid">
+    <div class="container text-center"> 
+        <h1>Mesas</h1>
+    </div>
+    <div class="mesa">
+        @foreach(Mesa item in Model)
+        {
+        <div class="" style="border:dotted">
+              <h4>@item.idMesa</h4>
+              <img src="~/css/PoolFull2.png" height="auto" width="100%" onclick="meta(Event, @item.idMesa)">
+              <div>
+                  <h6>Observaciones:</h6>
+                  <h6>@item.Observaciones</h6>
+              </div>
+        </div>
+        }
+    </div>
+
+</div>
+<script>
+
+function meta(e, item) {
+    alert(item);
+}
+</script>

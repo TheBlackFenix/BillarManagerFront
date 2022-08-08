@@ -1,0 +1,183 @@
+﻿@{
+    @model List<BillarManager.Models.Tarifas>
+}
+<div class="container container-fluid">
+    <div class="container">
+        <h1>Tarifas</h1>
+        <br />
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalInsertar">
+            <svg xmlns="http://www.w3.org/2000/svg" widtd="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">  <patd fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/></svg>
+            Agregar
+        </button>
+    </div>
+    <div class="container">
+        <table class="table table-active table-hover">
+            <tdead>
+                <tr>
+                    <td>
+                        Id Tarifa
+                    </td>
+                    <td>
+                        Tarifa
+                    </td>
+                    <td>
+                        Valor Minuto
+                    </td>
+                    <td>
+                        Estado
+                    </td>
+                    <td>
+                        Editar
+                    </td>
+                     <td>
+                        Eliminar
+                    </td>
+                </tr>
+            </tdead>
+            <tbody class="table table-striped table-responsive">
+                @foreach(Tarifas tarifa in Model)
+                {
+                <tr>
+                    <td>
+                        @tarifa.idTarifa
+                    </td>
+                    <td>
+                        @tarifa.Tarifa
+                    </td>
+                    <td>
+                        $ @tarifa.ValorMinuto
+                    </td>
+                    <td>
+                        @if (@tarifa.Estado.Equals(true))
+                        {
+                            <b>Activa</b>
+                        }else
+                        {
+                            <b>Inactiva</b>
+                        }
+                    </td>
+                    <td>
+                        <a onclick="Editar(@tarifa.idTarifa)" data-bs-toggle="modal" data-bs-target="#ModalEditar">
+                                <svg xmlns="http://www.w3.org/2000/svg" widtd="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">  <patd d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>  <patd fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg>
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="EliminarTarifa" asp-controller="Tarifa" asp-route-id="@tarifa.idTarifa">
+                            <svg xmlns="http://www.w3.org/2000/svg" widtd="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">  <patd d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/></svg>
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="ModalInsertar" tabindex="-1" aria-labelledby="Insertar" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Tarifa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form metdod="post" asp-action="NuevoTarifa" asp-controller="Tarifa">
+                        
+                        <div>
+                            <label for="Tarifa" class="form-label"> Tarifa
+                                <input type="text" name="Tarifa" class="form-control" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="ValorMinuto" class="form-label"> Valor x Minuto
+                                <input type="text" name="ValorMinuto" class="form-control" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="Estado" class="form-label"> Estado
+                                <select name="Estado" class="form-select" required>
+                                    <option value="@true"> Activo</option>
+                                    <option value="@false"> Inactivo</option>
+                                </select>
+                            </label>
+                        </div>
+                         <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editar -->
+    <div class="modal fade" id="ModalEditar" tabindex="-1" aria-labelledby="Editar" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Tarifa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form metdod="post" asp-action="EditarTarifa" asp-controller="Tarifa">
+                        <div>
+                            <label for="idTarifa" class="form-label"> id Tarifa
+                                <input type="text" id="idTarifaE" name="idTarifa" class="form-control" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="Tarifa" class="form-label"> Tarifa
+                                <input type="text" id="TarifaE" name="Tarifa" class="form-control" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="ValorMinuto" class="form-label"> Tarifa
+                                <input type="text" id="ValorMinutoE" name="ValorMinuto" class="form-control" required/>
+                            </label>
+                        </div>
+                        <div>
+                             <label for="Estado" class="form-label"> Estado
+                                <select name="Estado" class="form-select" required>
+                                    <option value="@true"> Activo</option>
+                                    <option value="@false"> Inactivo</option>
+                                </select>
+                            </label>
+                        </div>
+                         <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function Editar(data) {
+        debugger
+        $.ajax({
+            type: "GET",
+            url: "Tarifa/GetTarifa",
+            data: { id: data },
+            success: function (res) {
+                console.log(res);
+                //alert("Success");
+                document.getElementById('idTarifaE').value=res.idTarifa
+                document.getElementById('TarifaE').value=res.tarifa
+                document.getElementById('ValorMinutoE').value=res.valorMinuto
+                document.getElementById('EstadoE').value=res.estado
+                //document.getElementById('DocumentoE').value=res.documento
+            },
+            error: function (res) {
+                alert("Error")
+            }
+        })
+    };
+
+</script>
