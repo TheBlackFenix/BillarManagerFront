@@ -8,15 +8,31 @@
     <div class="mesa">
         @foreach(Mesa item in Model)
         {
-        <div class="" style="border:dotted">
-              <h4>@item.idMesa</h4>
-              <img src="~/css/PoolFull2.png" height="auto" width="100%" onclick="meta(Event, @item.idMesa)">
-              <div>
-                  <h6>Observaciones:</h6>
-                  <h6>@item.Observaciones</h6>
-              </div>
+        <div style="border:groove" class="container container-fluid text-center">
+            <div class="" style="height:20%">
+                  <h4>@item.idMesa</h4>
+            </div>
+            <div style="height:60%">
+                <img src="~/css/PoolFull2.png" class="img-fluid" onclick="meta(Event, @item.idMesa)"/>
+            </div>
+            <div style="height:20%">
+                <h6>Observaciones:</h6>
+                <h6>@item.Observaciones</h6>
+            </div>
         </div>
         }
+         <div style="border:groove" class="container container-fluid text-center">
+            <div class="" style="height:20%">
+                  <h4>Nueva Mesa</h4>
+            </div>
+            <div style="max-height:60%; min-height:60%">
+                <img src="~/plus.png" class="img-fluid img" height="50px" width="50px" onclick="meta(Event)"/>
+            </div>
+            <div style="height:20%">
+                <h6>Observaciones:</h6>
+                <h6></h6>
+            </div>
+        </div>
     </div>
 
 </div>

@@ -1,0 +1,7 @@
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\BillarManager.exe
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\BillarManager.dll
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\BillarManager.deps.json
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\BillarManager.runtimeconfig.json
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\PubTmp\Out\BillarManager.pdb

@@ -21,7 +21,9 @@ body {
     grid-template-columns:repeat(3,1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(100px,auto);
-    border: solid
+    border: solid;
+    align-items:center;
+    justify-items:center
 }
 .billar {
     background-image:url(../img/PoolFull.jpg);
