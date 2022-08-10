@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8NbprE0CkkpNqq8FdjkDUeMwmr3jZw1S/Uw+6dMojK8=",
+  "Hash": "PTdot5RyzvVujLPHD54NyHGcVE06kLGbzVg/JatZTdk=",
   "Source": "BillarManager",
   "BasePath": "_content/BillarManager",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\DANIE\\Desktop\\BillarManagerFront\\BillarManager\\BillarManager\\wwwroot\\plus.png",
+      "SourceId": "BillarManager",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DANIE\\Desktop\\BillarManagerFront\\BillarManager\\BillarManager\\wwwroot\\",
+      "BasePath": "_content/BillarManager",
+      "RelativePath": "plus.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\plus.png"
     }
   ]
 }

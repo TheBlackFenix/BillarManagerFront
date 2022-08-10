@@ -2,7 +2,7 @@
     @model List<BillarManager.Models.Estados>
 }
 <div class="container container-fluid">
-    <div class="container">
+    <div class="container ">
         <h1>Estados</h1>
         <br />
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalInsertar">
@@ -10,7 +10,7 @@
             Agregar
         </button>
     </div>
-    <div class="container">
+    <div class="container tablas">
         <table class="table table-active table-hover">
             <tdead>
                 <tr>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="modal-body">
                     <form metdod="post" asp-action="NuevoEstado" asp-controller="Estado">
-                    <div class="container container-fluid">
+                    <div class="container container-fluid text-center">
                         <div>
                             <label for="Estado" class="form-label"> Estado
                                 <input type="text" name="Estado" class="form-control"  required/>
@@ -91,7 +91,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Editar Estado</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
                     <form metdod="post" asp-action="EditarEstado" asp-controller="Estado">
                         <div>
                             <label for="idEstado" class="form-label"> Documento

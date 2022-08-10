@@ -6,6 +6,10 @@ builder.Services.AddHttpClient("HerokuApi", config =>
 {
     config.BaseAddress = new Uri(builder.Configuration["ServicesUrl:Heroku"]);
 });
+builder.Services.AddSession(option => {
+    option.IdleTimeout = TimeSpan.FromMinutes(30);
+    option.Cookie.Name = "Token";
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,7 +22,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

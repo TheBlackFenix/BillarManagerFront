@@ -15,8 +15,15 @@ namespace BillarManager.Controllers
         JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
         public async Task<IActionResult> Index()
         {
-            var data = await GetEstados();
-            return View(data);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Token")))
+            {
+                return RedirectToAction("Index","Home");
+            }
+            else
+            {
+                var data = await GetEstados();
+                return View(data);
+            }
         }
         public async Task<List<Estados>> GetEstados()
         {

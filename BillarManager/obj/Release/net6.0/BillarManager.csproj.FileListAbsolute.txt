@@ -24,3 +24,4 @@ C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Releas
 C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\BillarManager.pdb
 C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\BillarManager.genruntimeconfig.cache
 C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\ref\BillarManager.dll
+C:\Users\DANIE\Desktop\BillarManagerFront\BillarManager\BillarManager\obj\Release\net6.0\scopedcss\Views\Shared\_LayoutLogout.cshtml.rz.scp.css

@@ -1,14 +1,15 @@
 ﻿@{ 
     @model List<BillarManager.Models.Mesa>
+        
 }
 <div class="container container-fluid">
     <div class="container text-center"> 
         <h1>Mesas</h1>
     </div>
-    <div class="mesa">
+    <div class="mesa" style="min-height:600px; padding: 0% 3%">
         @foreach(Mesa item in Model)
         {
-        <div style="border:groove" class="container container-fluid text-center">
+        <div class="container container-fluid text-center individual">
             <div class="" style="height:20%">
                   <h4>@item.idMesa</h4>
             </div>
@@ -21,12 +22,12 @@
             </div>
         </div>
         }
-         <div style="border:groove" class="container container-fluid text-center">
+         <div class="container container-fluid text-center individual">
             <div class="" style="height:20%">
                   <h4>Nueva Mesa</h4>
             </div>
             <div style="max-height:60%; min-height:60%">
-                <img src="~/plus.png" class="img-fluid img" height="50px" width="50px" onclick="meta(Event)"/>
+                <img src="~/plus.png" class="img-fluid img" height="50px" width="50px" style="margin: 15%" onclick="meta(Event)"/>
             </div>
             <div style="height:20%">
                 <h6>Observaciones:</h6>

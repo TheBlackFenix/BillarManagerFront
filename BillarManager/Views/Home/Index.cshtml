@@ -1,8 +1,10 @@
 ﻿@{
+    Layout = "../Shared/_LayoutLogout.cshtml";
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
+    <div class="container container-fluid login">
     <form name="Login" asp-action="Login" asp-controller="Home" method="post">
         <div>
             <label class="form-label" for="username">Usuario
@@ -18,4 +20,5 @@
             <input type="submit" class="btn btn-primary" name="Login" value="Login"/>
         </div>
     </form>
+    </div>
 </div>

@@ -17,15 +17,24 @@ namespace BillarManager.Controllers
             this.http = http;
         }
         JsonSerializerOptions options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            if ( string.IsNullOrEmpty(HttpContext.Session.GetString("Token")))
+            {
+                return View();
+            }
+            else
+            {
+                var mesas = await GetMesas();
+                return View("Admin",mesas);
+            }
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
 
         public async Task<IActionResult> Login(LoginData data)
         {
@@ -38,6 +47,8 @@ namespace BillarManager.Controllers
              //   var content = await response.Content.ReadAsStringAsync();
                 var result = JsonSerializer.Deserialize<Token>(content, options);
                 var mesas = await GetMesas();
+                HttpContext.Session.SetString("Token", result.access);
+                HttpContext.Session.SetString("Token", result.refresh);
                 return View("Admin",mesas);
             }
             else {
@@ -51,6 +62,11 @@ namespace BillarManager.Controllers
             var content = await response.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<List<Mesa>>(content, options);
             return result;
+        }
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
